@@ -1,0 +1,12 @@
+FROM ubuntu:14.04
+MAINTAINER Brian Mackintosh "bmackintosh@hyperiongray.com"
+
+RUN mkdir -p /opt/muricanize/model
+WORKDIR /opt/muricanize
+
+ADD ./model ./model
+
+RUN apt-get update
+RUN apt-get install --assume-yes python3-pip
+
+RUN pip3 install flask
